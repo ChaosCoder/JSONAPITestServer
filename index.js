@@ -12,14 +12,17 @@ const status = function(req, res, next) {
 };
 
 app.get('/get', status, function (req, res) {
+  console.log('/get called');
   res.json(req.query);
 });
 
 app.post('/post', status, function (req, res) {
+  console.log('/post called');
   res.json(req.body);
 });
 
 app.get('/redirect', function (req, res) {
+  console.log('/redirect called');
   res.redirect(302, req.get('X-LOCATION'));
 });
 
