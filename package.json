@@ -1,0 +1,22 @@
+{
+  "name": "jsonapitestserver",
+  "version": "0.1.0",
+  "description": "A server to answer JSON API requests",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/ChaosCoder/JSONAPITestServer.git"
+  },
+  "author": "Andreas Ganske",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  },
+  "bugs": {
+    "url": "https://github.com/ChaosCoder/JSONAPITestServer/issues"
+  },
+  "homepage": "https://github.com/ChaosCoder/JSONAPITestServer#readme"
+}
