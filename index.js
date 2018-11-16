@@ -5,17 +5,22 @@ const app = express();
 const util = require('util');
 
 app.use(express.json());
-app.use(function(req, res, next) {
+
+const status = function(req, res, next) {
   res.status(req.get('X-HTTP-STATUS') || 200);
   next();
-});
+};
 
-app.get('/*', function (req, res) {
+app.get('/get', status, function (req, res) {
   res.json(req.query);
 });
 
-app.post('/*', function (req, res) {
+app.post('/post', status, function (req, res) {
   res.json(req.body);
+});
+
+app.get('/redirect', function (req, res) {
+  res.redirect(302, req.get('X-LOCATION'));
 });
 
 app.use(function(error, req, res, next) {
