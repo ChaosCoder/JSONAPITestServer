@@ -17,6 +17,10 @@ const status = function(req, res, next) {
   next();
 };
 
+app.get('/', function (req, res) {
+  res.send();
+});
+
 app.get('/get', status, function (req, res) {
   console.log('/get called');
   res.json(req.query);
