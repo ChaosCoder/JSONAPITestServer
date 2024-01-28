@@ -3,7 +3,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const util = require('util');
 
 function isEmptyObject(obj) {
   return Object.keys(obj).length === 0 && obj.constructor === Object;
@@ -41,4 +40,5 @@ app.use(function(error, req, res, next) {
   res.status(400).json({error: error.message});
 });
 
-app.listen(process.env.PORT, () => console.log(`Server listening on port ${process.env.PORT}!`));
+const port = process.env.PORT || 3000;
+app.listen(port, () => console.log(`Server listening on port ${port}!`));
